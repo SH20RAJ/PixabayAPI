@@ -3,7 +3,18 @@ document.onload = loadDocbp();
 
 var postdata = null;
 
+function get() {
+    var url = location.href;
+    window.gurl = url.split('/');
+    console.log(gurl);
+    var newurl = gurl[5].split('-');
+    window.npicid = newurl[0];
+    console.log(window.npicid);
+    return gurl[4];
+    } 
+
 function loadDocbp() {
+    get();
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -13,7 +24,7 @@ function loadDocbp() {
             setup(data);
         }
     };
-    xhttp.open("GET", 'https://pixabay.com/api/?pretty=true&key=' + key + '&id=' + getParameterByName('id'), true);
+    xhttp.open("GET", 'https://pixabay.com/api/?pretty=true&key=' + key + '&id=' + window.npicid , true);
     xhttp.send();
 
 }
@@ -31,10 +42,13 @@ function setup() {
     document.getElementById('tags').innerText = data.hits[0].tags  ;
     document.getElementById('resolution').innerText = data.hits[0].imageHeight + ' * ' + data.hits[0].imageWidth  ;
     
-    get(data.hits[0].pageURL)
-    document.title = gurl[4].replace('-' , ' ') +" - Tags :- "+data.hits[0].tags ;
-    console.log();
+    gettitle()
+    document.title = ntitle[4].replace('-' , ' ') +" - Tags :- "+data.hits[0].tags ;
 }
+function gettitle() {
+    var url = data.hits[0].pageURL;
+    window.ntitle = url.split('/');
+    } 
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -46,13 +60,3 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-
-function get(a) {
-var url = a;
-window.gurl = url.split('/');
-console.log(gurl);
-var newurl = gurl[3] + "/" + gurl[4];
-for (var i = 7; i < gurl.length; i++) {
-newurl += "/" + gurl[i] + "";
-return gurl[4];
-} }

@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Images</title>
-    <link rel="stylesheet" href="../assets/header.css">
+    <title>PHOSHADE - Free Hight Quality Images</title>
+    <link rel="icon" href="../logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../site.css">
     <link rel="stylesheet" href="../bootstrap.css">
     <script src="search.js"></script>
 </head>
@@ -14,98 +15,23 @@
 <body>
     <header>
         <a href="../">
-            <h1>INDS</h1>
+            <h1>PHOSHADE</h1>
         </a>
         <form action="" method="get">
-            <input type="text" name="q" class="search" placeholder="Search nature ,Car...">
+            <input type="text" name="q" id="search" class="search" placeholder="Search nature ,Car...">
             <button type="submit" class="searchbtn">SEARCH</button>
         </form>
     </header>
+
     <div id="container"></div>
 <div class="imgfooter">
     <a href=" "><button class="imgdownload">IND. Stock</button></a>
 </div>
 
-
-    <style>
-        .image {
-            text-align: center;
-            width: 400px;
-            height: 300px;
-            display: inline-block;
-            background: #c8ecbd;
-            margin: 8px;
-            padding: 4px;
-        }
-        .imgfooter {
-            position: relative;
-            background: rgba(190, 247, 247, 0.445);
-            padding: 4px;
-            left: -4000px;
-            overflow: none;
-            animation-delay: 1s;
-        }
-        .image:hover .imgfooter , .image:focus .imgfooter {
-            left: 0px;
-            bottom: 40px;
-        }
-        .image img {
-            position: relative;
-            height: 100%;
-            width: auto;
-        }
-        #container {
-            text-align: justify;
-            background: #bdd6ec;
-            margin: 40px;
-            padding: 0ch;
-        }
-
-        header {
-            background-color: rgb(187, 245, 245);
-            padding: 6px;
-            padding-bottom: 10px;
-            height: 60px;
-            text-align: justify;
-        }
-
-        h1 {
-            display: inline-block;
-        }
-
-        form {
-            text-align: center;
-            display: inline-block;
-            width: 500px;
-            padding: 0;
-            margin-bottom: 4px;
-        }
-
-        button {
-            background: none;
-            border: 0;
-        }
-
-        .search {
-            background: rgb(240, 220, 230);
-            font-size: 20px;
-            border: 0;
-            border-radius: 2px;
-            width: 550;
-            padding: 4px;
-            outline: none;
-        }
-
-        .searchbtn {
-            background: rgb(165, 219, 223);
-            font-size: 20px;
-            border: 0;
-            border-radius: 2px;
-            width: 550;
-            padding: 4px;
-            outline: none;
-        }
-    </style>
+<footer>
+    <button class="showmore" onclick="show(5)">Show 5 more</button>
+</footer>
+   
 </body>
 
 </html>
